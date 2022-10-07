@@ -15,6 +15,8 @@ class Router
     $route = array_values($route);
     $controller = ucfirst($route[0]) . "Controller";
     $action = isset($route[1]) ? $route[1] . "Action": "indexAction";
+    $_REQUEST["id"] = isset($route[2]) ? $route[2]: "";
+    var_dump($_REQUEST);
     return compact("controller", "action");
   }
   static function get($url)

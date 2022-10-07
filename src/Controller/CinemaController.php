@@ -26,7 +26,7 @@ class CinemaController extends \Core\Controller
     public function movieAction()
     {
         $element = $this->model->movies();
-        if ($this->request["id"]) {
+        if (!empty($this->request["id"])) {
             $this->model->movie($this->request["id"]);
         }
         $this->render("movies", compact("element"));
@@ -35,7 +35,7 @@ class CinemaController extends \Core\Controller
     //Members
     public function membersAction()
     {
-        $element = $this->model->members();
+        $element = $this->model->allMembers();
         $this->render("members", compact("element"));
     }
     //

@@ -16,8 +16,8 @@ class CinemaModel extends \Core\ORM
          INNER JOIN genre 
          ON genre.id = movie_genre.id_genre 
          INNER JOIN distributor 
-         ON distributor.id = movie.id_distributor";
-        $this->member_select = "SELECT * FROM membership INNER JOIN user ON user.id = membership.id_user";
+         ON distributor.id = movie.id_distributor ";
+        $this->member_select = "SELECT * FROM membership INNER JOIN user ON user.id = membership.id_user ";
         //
     }
 
@@ -47,6 +47,6 @@ class CinemaModel extends \Core\ORM
     }
     function member($id)
     {
-        return $this->mySql($this->member_select . "AND  membership.id_user= ?", [$id]);
+        return $this->mySql($this->member_select . "AND  membership.id_user=?", [$id]);
     }
 }

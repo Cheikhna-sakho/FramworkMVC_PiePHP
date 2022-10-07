@@ -8,7 +8,7 @@ class AppController extends \Core\Controller
     }
     public function indexAction()
     {
-        echo 'yoyo';
+        echo 'hello le pangolin';
         // $this->render('User/register');
     }
 }
